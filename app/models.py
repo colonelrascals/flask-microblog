@@ -1,15 +1,14 @@
 from datetime import datetime
-from app import db
+from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from app import login
 from hashlib import md5
 
 followers = db.Table(
     'followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-    )
+)
 
 
 class User(UserMixin, db.Model):
@@ -27,6 +26,9 @@ class User(UserMixin, db.Model):
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
     def check_password_hash(self, password):
         return check_password_hash(self.password_hash, password)
@@ -51,20 +53,18 @@ class User(UserMixin, db.Model):
     def followed_posts(self):
         followed = Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)).filter(
-                followers.follower_id == self.id)
+                followers.c.follower_id == self.id)
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
-            
-
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
 
 class Post(db.Model):
-    id=db.Column(db.Integer, primary_key=True)
-    body=db.Column(db.String(140))
-    timestamp=db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String(140))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)

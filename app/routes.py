@@ -4,8 +4,10 @@ from flask import (
     flash,
     redirect,
     url_for,
+    request
 )
 from app import app, db
+from werkzeug.urls import url_parse
 from app.forms import (
     LoginForm,
     RegistrationForm,
@@ -91,7 +93,7 @@ def user(username):
         {'author': user, 'body': 'Test post #1'},
         {'authoer': user, 'body': 'Test post #2'}
     ]
-    return render_template(user.html, user=user, posts=posts)
+    return render_template('user.html', user=user, posts=posts)
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])

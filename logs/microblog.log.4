@@ -1,0 +1,114 @@
+2018-02-08 11:20:07,518 ERROR: Exception on /user/paddy [GET] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 94, in user
+    ]
+AttributeError: 'User' object has no attribute 'html'
+2018-02-08 11:20:15,637 ERROR: Exception on /login [POST] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 58, in login
+    login_user(user, remember=form.remember_me.data)
+NameError: name 'request' is not defined
+2018-02-08 11:20:53,786 ERROR: Exception on /index [GET] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 42, in index
+    return redirect(url_for('index'))
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/models.py", line 57, in followed_posts
+    followers.follower_id == self.id)
+AttributeError: 'Table' object has no attribute 'follower_id'
+2018-02-08 11:21:00,664 ERROR: Exception on /login [POST] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 58, in login
+    login_user(user, remember=form.remember_me.data)
+NameError: name 'request' is not defined
+2018-02-08 11:21:39,534 INFO: Microblog startup [in /Users/patrickhildreth/Documents/python/flask-microblog/app/__init__.py:47]
+2018-02-08 11:21:44,443 ERROR: Exception on / [GET] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 43, in index
+    posts = current_user.followed_posts().all()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/models.py", line 57, in followed_posts
+    followers.follower_id == self.id)
+AttributeError: 'Table' object has no attribute 'follower_id'
+2018-02-08 11:21:54,689 ERROR: Exception on /login [POST] [in /Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/patrickhildreth/Documents/python/flask-microblog/app/routes.py", line 60, in login
+    if not next_page or url_parse(next_page).netloc != '':
+NameError: name 'url_parse' is not defined
+2018-02-08 11:22:32,004 INFO: Microblog startup [in /Users/patrickhildreth/Documents/python/flask-microblog/app/__init__.py:47]
